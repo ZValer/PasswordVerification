@@ -6,29 +6,21 @@
 Choose a useful problem to solve using a specific programming paradigm (App, ICPC, script).
 Explain the context of the problem and why it is useful. 
 
-In our everyday we use passwords. 
+
+We use passwords practically everyday.  From unlocking our phones, entering our email or paying with a card. Passwords work as the principal method of authenticating and protecting us as user, our identities and our sensitive information.
+
+Different apps and systems use different methods of authentication based on the level of security required and user convenience. While apps that handle sensitive information enforce complex passwords, phones for a quick access use shorter passwords, face id or finger prints. Those last two require integration of sensors. However they can´t always be added. 
+
+And for most systems we have to create strong passwords. These are some tips recomended by Microsoft (2024) to do so: 
+1. Use at least 12 characters.
+2. Use a combination of uppercase letters, lowercase letters, numbers, and symbols.
+3. Don't use words that can be found in a dictionary, names, characters, products, or organizations.
+4. Make the password significantly different from your previous passwords.
+5. Make it easy for you to remember but difficult for others to guess. 
+
+Number 3, 4 and 5 are responsability for the person to implement, as for the first 2, they can be programmed.
 
 ## Model of the Solution
-
-### Automaton 
-##### Generating the Automaton that recognizes the language.
-
-A deterministic finite automaton (DFA) is a quintuple (K, Σ, q<sub>0</sub>, F, δ) where:  
-- K: Finite number of states  
-- Σ: Finite characters of the alphabet   
-- q<sub>0</sub> ∈ K: Single designated start state
-- F: Final state
-- δ is a function form K x Σ to K which are the transitions (Nakayama, n.d.).
-
-
-This was the automaton used to represent a secure password...   
-
-- The nodes in the graph are states which are letters, numbers or symbols.
-- The symbol in the arches represent the actions taken or the next character.
-- The first line represents the start.
-- The double circle represents an acceptable or correct state.
-- States with no double circle are not acceptable states
-
 
 ### Regular Expression
 ##### Generating a regular expression that is equivalent to the language.
@@ -44,18 +36,6 @@ Breaking down the expression we have the following:
 Implement your solution in a language that supports the programming paradigm.
 
 ### Automaton
-For my implementation of a lexical analysis, I followed the automaton as can be seen in ...
-
-> [!TIP]
-> To test it in a terminal you need to go the folder with the file, write "swipl" and then "["x"].".
-> 
->Then put the input in the format "check(password).", for example "check([0,0,1,1,2,2]).", and the program should return "yes" if the string is accepted or "no" if the string is not part of the language.
-
-Some examples of inputs and outputs are:
-- check([0,0,1,1,2,2]).
-no
-...
-
 
 ### Regular expression
 For the second implementation, I followed the regular expression as can be seen "x.py" fyle. 
@@ -72,14 +52,6 @@ The regex implementation can be found in the x.py file. To run the program in th
 
 To show that the implemented model works as intended and correctly solves the problem a set of documented tests are shown. 
 
-### DFA
-
-The file "automatonTests.pl" contains test cases for the DFA. 
-> [!TIP]
->To test it in a terminal you need to go the folder with the file, write "swipl" and then "["x"].".   
-
-image
-
 ### Regular Expression
 
 The file "test_regex.py" contains test cases for the Regular Expression.
@@ -89,11 +61,6 @@ The file "test_regex.py" contains test cases for the Regular Expression.
 image   
 
 ## Analysis 
-
-### DFA
-The complexity of my model is in general O(n). 
-.... 
-
 ### Regular Expression
 The complexity of my model is in general O(n). 
 
@@ -105,10 +72,12 @@ The complexity of my model is in general O(n).
 
 
 ## References
-Thakur, S. (2023). What Is The Difference Between DFA And NFA?. Unstop. Retrieved from: https://unstop.com/blog/difference-between-dfa-and-nfa
+
+Microsoft. (2024). Create and use strong passwords. Microsoft. Retrieved from: https://support.microsoft.com/en-us/windows/create-and-use-strong-passwords-c5cebb49-8c53-4f5e-2bc4-fe357ca048eb 
 
 NTU. (2018). Regular Expressions (Regex).  NTU. Retrieved from: https://www3.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html 
 
 Freitag, P. (2008). Regex Cheat Sheet. Petefreitag. Retrieved from: https://www.petefreitag.com/cheatsheets/regex/ 
 
 Nakayama, M. (n. d.). CS 341: Foundations of CS II. Computer Science Department. New Jersey Institute of Technology. Retrieved from: https://web.njit.edu/~marvin/cs341/notes/chap01-handout4.pdf 
+
